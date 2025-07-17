@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions | AAQI Soft Solutions</title>
+  <style>
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      margin: 5px;
+      background-color: #e67e22;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      color: #e67e22;
+      font-size: 2.5em;
+    }
+
+    section {
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: #d35400;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="splash">
+    <div style="display: flex;">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <p>Loading Terms & Conditions...</p>
+  </div>
+
+  <div class="container" id="mainContent" style="display: none;">
+    <header>
+      <h1>Terms & Conditions</h1>
+      <p>Understand our legal guidelines before using our services.</p>
+    </header>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>By accessing or using our services at AAQI Soft Solutions, you agree to comply with and be bound by these terms. If you disagree with any part, you must discontinue use immediately.</p>
+    </section>
+
+    <section>
+      <h2>2. Intellectual Property</h2>
+      <p>All content, logos, designs, and trademarks are the intellectual property of AAQI Soft Solutions and may not be reused without written consent.</p>
+    </section>
+
+    <section>
+      <h2>3. User Responsibilities</h2>
+      <p>You agree not to misuse our services, interfere with functionality, attempt unauthorized access, or violate any laws while using our website or apps.</p>
+    </section>
+
+    <section>
+      <h2>4. Modifications</h2>
+      <p>We reserve the right to update these terms at any time. Updates will be posted here, and your continued use signifies acceptance.</p>
+    </section>
+
+    <section>
+      <h2>5. Termination</h2>
+      <p>We may suspend or terminate your access if you violate these terms or engage in any behavior deemed harmful to our services or reputation.</p>
+    </section>
+
+    <section>
+      <h2>6. Contact</h2>
+      <p>For any questions regarding our Terms & Conditions, please contact us at: <strong>muhammadasadullah1756@gmail.com</strong></p>
+    </section>
+
+    <footer>
+      © 2024 AAQI Soft Solutions. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
