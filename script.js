@@ -64,17 +64,3 @@ addEventOnElem(window, "scroll", headerActive);
 
 
 
-<script>
-  function toggleAboutModal() {
-    const modal = document.getElementById("aboutModal");
-    modal.style.display = (modal.style.display === "block") ? "none" : "block";
-  }
-
-  // Close modal on outside click
-  window.onclick = function(event) {
-    const modal = document.getElementById("aboutModal");
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
