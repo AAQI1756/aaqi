@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – AAQI Soft Solutions</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; animation: fadeIn 1s ease-in-out; }
+    h2 { text-align: center; color: #333; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select, textarea {
+      width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    button {
+      margin-top: 20px; background-color: #007BFF; color: white; padding: 12px; border: none; width: 100%;
+      font-size: 16px; border-radius: 5px; cursor: pointer;
+    }
+    button:hover { background-color: #0056b3; }
+    .message { margin-top: 20px; text-align: center; font-weight: bold; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Contact AAQI Soft Solutions</h2>
+    <form id="contactForm">
+      <label>Full Name</label>
+      <input type="text" name="name" required />
+
+      <label>Email</label>
+      <input type="email" name="email" required />
+
+      <label>WhatsApp Number</label>
+      <input type="text" name="whatsapp" required />
+
+      <label>Country</label>
+      <input type="text" name="country" required />
+
+      <label>Reason</label>
+      <select name="reason" required>
+        <option value="">Select Reason</option>
+        <option value="General">General</option>
+        <option value="Affiliate">Affiliate</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Service">Service</option>
+        <option value="IT Consultancy">IT Consultancy</option>
+        <option value="Promotion">Promotion</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>Message</label>
+      <textarea name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <div class="message" id="responseMsg"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('responseMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      msg.textContent = "Sending... Please wait";
+
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbxpyMX6vSjpWFtfeZWod-h-SVYup4QsuCZIcXAt5g3zxhYJMV02Yaq3GW0E4X7sjA5PAA/exec", {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" }
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          msg.textContent = "Thank you! AAQI Soft Solutions will contact you shortly.";
+          form.reset();
+        } else {
+          msg.textContent = "Failed to send. Try again.";
+        }
+      } catch (error) {
+        msg.textContent = "An error occurred. Please try later.";
+      }
+    });
+  </script>
+</body>
+</html>
