@@ -487,73 +487,10 @@
         </div>
       </section>
 
-<!-- 👥 Partner Logo Slider Section -->
+
+<!-- 🌐 Our Partners Section -->
 <section class="partner-section">
-  <style>
-    .partner-section {
-      padding: 40px 0;
-      background-color: #f9f9f9;
-      overflow: hidden;
-    }
-    .partner-container {
-      max-width: 1200px;
-      margin: auto;
-      overflow: hidden;
-      position: relative;
-    }
-    .partner-slider {
-      display: flex;
-      gap: 30px;
-      animation: scroll 60s linear infinite;
-    }
-    .partner-logo {
-      flex: 0 0 auto;
-      transition: transform 0.3s ease;
-    }
-    .partner-logo img {
-      max-height: 80px;
-      max-width: 140px;
-      object-fit: contain;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .partner-logo:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-    .partner-slider:hover {
-      animation-play-state: paused;
-    }
-    @keyframes scroll {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .partner-slider {
-        gap: 20px;
-      }
-      .partner-logo img {
-        max-height: 60px;
-        max-width: 100px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .partner-logo img {
-        max-height: 50px;
-        max-width: 80px;
-      }
-    }
-  </style>
-
+  <h2 class="partner-heading">Our Partners</h2>
   <div class="partner-container">
     <div class="partner-slider">
       <a href="#" class="partner-logo">
@@ -585,7 +522,88 @@
       </a>
     </div>
   </div>
+
+  <style>
+    /* 🌟 Partner Slider Styles */
+    .partner-section {
+      background: #fff;
+      padding: 40px 10px;
+      text-align: center;
+    }
+
+    .partner-heading {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .partner-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .partner-slider {
+      display: flex;
+      width: fit-content;
+      animation: scrollSlider 60s linear infinite;
+    }
+
+    .partner-section:hover .partner-slider {
+      animation-play-state: paused;
+    }
+
+    .partner-logo {
+      flex: 0 0 auto;
+      margin: 0 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo img {
+      height: 80px;
+      width: auto;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .partner-logo:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes scrollSlider {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 768px) {
+      .partner-logo img {
+        height: 60px;
+        margin: 0 10px;
+      }
+
+      .partner-heading {
+        font-size: 22px;
+      }
+    }
+  </style>
+
+  <script>
+    // Optional: Duplicate logos to make the slider seamless
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.querySelector(".partner-slider");
+      const clone = slider.innerHTML;
+      slider.innerHTML += clone;
+    });
+  </script>
 </section>
+
+
+
+
+
+      
 
       <!-- 
         - #NEWSLETTER
