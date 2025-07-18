@@ -487,62 +487,105 @@
         </div>
       </section>
 
-/* Partner Logo Slider Section */
+<!-- 👥 Partner Logo Slider Section -->
+<section class="partner-section">
+  <style>
+    .partner-section {
+      padding: 40px 0;
+      background-color: #f9f9f9;
+      overflow: hidden;
+    }
+    .partner-container {
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .partner-slider {
+      display: flex;
+      gap: 30px;
+      animation: scroll 60s linear infinite;
+    }
+    .partner-logo {
+      flex: 0 0 auto;
+      transition: transform 0.3s ease;
+    }
+    .partner-logo img {
+      max-height: 80px;
+      max-width: 140px;
+      object-fit: contain;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .partner-logo:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .partner-slider:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
 
+    /* Responsive */
+    @media (max-width: 768px) {
+      .partner-slider {
+        gap: 20px;
+      }
+      .partner-logo img {
+        max-height: 60px;
+        max-width: 100px;
+      }
+    }
 
+    @media (max-width: 480px) {
+      .partner-logo img {
+        max-height: 50px;
+        max-width: 80px;
+      }
+    }
+  </style>
 
-      
-<section>
-<section class="partners-section">
-    <div class="partners-title">Our Partners</div>
-    <div class="slider-container">
-      <div class="slider-track">
-        <!-- Repeat the logos to create infinite effect -->
-        <div class="slider-item">
-          <a href="#"><img src="https://yt3.googleusercontent.com/ytc/AIdro_nosAygDMFhkLid1pjiDGSbNtCbYlN7lrMzglYOEkFI3gI=s900-c-k-c0x00ffffff-no-rj" alt="Partner 1"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Hostinger_logo.png/1024px-Hostinger_logo.png" alt="Partner 2"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT_Oav-HUDrCoEa3uOj0VumX9ZcrCv_6UzL6-rEkaZ0XowKQrZP8qnctqeY-M23gtWsOo&usqp=CAU" alt="Partner 3"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://image.winudf.com/v2/user/admin/YWRtaW5fYXBrcHVyZS1saXRlLWljb24ucG5nXzE1ODQxOTcxOTQ2MTM/icon.png?w=160&fakeurl=1" alt="Partner 4"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://images.seeklogo.com/logo-png/38/1/fiverr-new-2020-logo-png_seeklogo-387612.png" alt="Partner 5"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/03/hostbreak-logo-alt.webp" alt="Partner 6"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://yt3.googleusercontent.com/_A3B7sFxvSM4VA-gCPjlbPUMWQh_4M8GP9-XngE7vDj3ecUpGzsqj6KAOQjwgBZKJoeeS7Wn=s900-c-k-c0x00ffffff-no-rj" alt="Partner 7"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkK3VVZR0Oob1Cmw8ZspEPDmD9AG2bSWOxSg&s" alt="Partner 8"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://i.pinimg.com/474x/8c/71/58/8c71585dab5d9c39242bd3e80f3418f8.jpg" alt="Partner 9"></a>
-        </div>
-
-        <!-- Duplicate for infinite loop effect -->
-        <div class="slider-item">
-          <a href="#"><img src="https://yt3.googleusercontent.com/ytc/AIdro_nosAygDMFhkLid1pjiDGSbNtCbYlN7lrMzglYOEkFI3gI=s900-c-k-c0x00ffffff-no-rj" alt="Partner 1"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Hostinger_logo.png/1024px-Hostinger_logo.png" alt="Partner 2"></a>
-        </div>
-        <div class="slider-item">
-          <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT_Oav-HUDrCoEa3uOj0VumX9ZcrCv_6UzL6-rEkaZ0XowKQrZP8qnctqeY-M23gtWsOo&usqp=CAU" alt="Partner 3"></a>
-        </div>
-        <!-- Add more duplicates if needed -->
-      </div>
+  <div class="partner-container">
+    <div class="partner-slider">
+      <a href="#" class="partner-logo">
+        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nosAygDMFhkLid1pjiDGSbNtCbYlN7lrMzglYOEkFI3gI=s900-c-k-c0x00ffffff-no-rj" alt="Partner 1">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Hostinger_logo.png/1024px-Hostinger_logo.png" alt="Partner 2">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT_Oav-HUDrCoEa3uOj0VumX9ZcrCv_6UzL6-rEkaZ0XowKQrZP8qnctqeY-M23gtWsOo&usqp=CAU" alt="Partner 3">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://image.winudf.com/v2/user/admin/YWRtaW5fYXBrcHVyZS1saXRlLWljb24ucG5nXzE1ODQxOTcxOTQ2MTM/icon.png?w=160&fakeurl=1" alt="Partner 4">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://images.seeklogo.com/logo-png/38/1/fiverr-new-2020-logo-png_seeklogo-387612.png" alt="Partner 5">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2019/03/hostbreak-logo-alt.webp" alt="Partner 6">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://yt3.googleusercontent.com/_A3B7sFxvSM4VA-gCPjlbPUMWQh_4M8GP9-XngE7vDj3ecUpGzsqj6KAOQjwgBZKJoeeS7Wn=s900-c-k-c0x00ffffff-no-rj" alt="Partner 7">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkK3VVZR0Oob1Cmw8ZspEPDmD9AG2bSWOxSg&s" alt="Partner 8">
+      </a>
+      <a href="#" class="partner-logo">
+        <img src="https://i.pinimg.com/474x/8c/71/58/8c71585dab5d9c39242bd3e80f3418f8.jpg" alt="Partner 9">
+      </a>
     </div>
-  </section>
-
-
-
+  </div>
+</section>
 
       <!-- 
         - #NEWSLETTER
